@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Chat extends Model
 {
     use HasFactory;
-    protected $table = "chats";
+    protected $table = 'chats';
     protected $guarded = ['id'];
 
     public function participants() : HasMany{
