@@ -10,6 +10,7 @@ use App\Models\ChatMessage;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ChatMessageController extends Controller
 {
@@ -53,12 +54,10 @@ class ChatMessageController extends Controller
 
         $chatMessage = ChatMessage::create($data);
         $chatMessage->load('user');
-
         /// TODO send broadcast event to pusher and send notification to onesignal services
-
         $this->sendNotificationToOther($chatMessage);
-        return $this->success($chatMessage, 'Message sent successfully');
-
+        return $this->success($chatMessage, 'Message sent successfully'); 
+           
     }
 
     /**
@@ -69,7 +68,7 @@ class ChatMessageController extends Controller
      */
     private function sendNotificationToOther(ChatMessage $chatMessage): void {
         //$chatId = $chatMessage->chat_id;
-        
+    
         broadcast(new NewMessageSent($chatMessage))->toOthers();
     
         $user = auth()->user();
@@ -77,22 +76,28 @@ class ChatMessageController extends Controller
     
         $chat = Chat::where('id', $chatMessage->chat_id)
             ->with(['participants' => function ($query) use ($userId) {
-                $query->where('user_id', '!=', $userId); // Adicionando ponto e vírgula aqui
+                $query->where('user_id', '!=', $userId);
             }])
             ->first();
-            if(count($chat->participants) > 0){
-                $otherUserId = $chat->participants[0]->user_id;
-
-                $otherUser = User::where('id', $otherUserId)->first();
-                $otherUser->sendNewMessageNotification([
-                    'messageData'=>[
-                        'sendName' =>$user->name,
-                        'message' =>$chatMessage->message,
-                        'chatId' =>$chatMessage->chat_id
-                    ]
-                ]);
-
-            }
+    
+        if (count($chat->participants) > 0) {
+            $otherUserId = $chat->participants[0]->user_id;
+    
+            $otherUser = User::where('id', $otherUserId)->first();
+            $notificationData = [
+                'messageData' => [
+                    'senderName' => $user->username,
+                    'message' => $chatMessage->message,
+                    'chatId' => $chatMessage->chat_id
+                ]
+            ];
+    
+            // Adicione um log personalizado para depurar
+            Log::debug('Preparing to send notification to OneSignal', ['notificationData' => $notificationData]);
+    
+            $otherUser->sendNewMessageNotification($notificationData);
+        }
     }
+    
 
 }

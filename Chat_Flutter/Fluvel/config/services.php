@@ -34,6 +34,6 @@ return [
     'onesignal' => [
         'app_id' => env('ONESIGNAL_APPLICATION_ID'),
         'rest_api_key' => env('ONESIGNAL_REST_API_KEY'),
-        'guzzle_client_timeout' =>env('ONESIGNAL_GUZZLE_CLIENT_TIMEOUT', 0)
-    ]
+        'guzzle_client_timeout' => env('ONESIGNAL_GUZZLE_CLIENT_TIMEOUT', 0),
+    ],
 ];
