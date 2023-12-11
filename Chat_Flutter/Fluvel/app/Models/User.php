@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Log;
 use Laravel\Sanctum\HasApiTokens;
+
 
 class User extends Authenticatable
 {
@@ -64,7 +66,9 @@ class User extends Authenticatable
         
     
 
-    public function sendNewMessageNotification(array $data) : void{
+    public function sendNewMessageNotification(array $data): void {
+        Log::debug('Sending New Message Notification', ['data' => $data]);
+    
         $this->notify(new MessageSent($data));
     }
 

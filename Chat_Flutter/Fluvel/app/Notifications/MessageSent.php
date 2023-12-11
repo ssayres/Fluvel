@@ -14,11 +14,10 @@ class MessageSent extends Notification
     use Queueable;
 
     /**
-     * Create a new notification instance.
-     *
-     * @return void
+     * MessageSent constructor.
+     * @param array $data
      */
-    public function __construct(private array $data )
+    public function __construct(private array $data)
     {
         //
     }
@@ -38,22 +37,10 @@ class MessageSent extends Notification
         $messageData = $this->data['messageData'];
 
         return OneSignalMessage::create()
-        ->setSubject($messageData['senderName']. "te enviou uma mensagem")
-        ->setBody($messageData['message'])
-        ->setData('data', $messageData);
+                ->setSubject($messageData['senderName']. " sent you a message.")
+                ->setBody($messageData['message'])
+                ->setData('data',$messageData);
     }
 
 
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-        ];
-    }
 }
