@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_front/screens/guest/guest_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Chat App',
+      title: 'Chat App Teste',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,9 +28,9 @@ class MyApp extends StatelessWidget {
         // restart instead.
         //
         // This works for code too, not just values: Most code changes can be
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green, 
       ),
-      home: Scaffold(),
+      home: const GuestScreen(),
     );
   }
 }
