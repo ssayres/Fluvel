@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_front/screens/chat_list/chat_list_screen.dart';
 import 'package:flutter_login/flutter_login.dart';
 
 const users = const {
-  'dribble@gmail.com': '12345',
+  'dribble@gmail.com': '12345678',
   'hunter@gmail.com': 'hunter',
 };
 
@@ -45,8 +46,9 @@ class GuestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return FlutterLogin(
+      scrollable: true,
+      hideForgotPasswordButton: true,
       title: 'Via Chat',
       theme: LoginTheme(
         pageColorDark: Color.fromARGB(255, 223, 240, 253),
@@ -55,13 +57,21 @@ class GuestScreen extends StatelessWidget {
       logo: const AssetImage('icons/icon.png'),
       onLogin: _authUser,
       onSignup: _signupUser,
+      userValidator: (value) {
+        if (value == null || !value.contains('@')) {
+          return 'Por favor, coloque um endereço de e-mal válido';
+        }
+      },
+      passwordValidator: (value) {
+        if (value == null || value.length < 8) {
+          return "Senha deve conter no mínimo 8 caracteres";
+        }
+        return null;
+      },
       onSubmitAnimationCompleted: () {
-        // Navigator.of(context).pushReplacement(MaterialPageRoute(
-        //   builder: (context) => DashboardScreen(),
-        // ));
+        Navigator.of(context).pushReplacementNamed(ChatListScreen.routeName);
       },
       onRecoverPassword: _recoverPassword,
     );
-    
   }
 }

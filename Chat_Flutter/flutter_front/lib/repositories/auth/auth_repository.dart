@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_front/models/models.dart';
-import 'package:flutter_front/models/requests/requests.dart';
 import 'package:flutter_front/models/user_model.dart';
+import 'package:flutter_front/models/requests/register_request.dart';
+import 'package:flutter_front/models/requests/login_request.dart';
+import 'package:flutter_front/models/app_response.dart';
 import 'package:flutter_front/repositories/auth/base_auth_repository.dart';
 import 'package:flutter_front/repositories/core/endpoints.dart';
 import 'package:flutter_front/utils/dio_client/dio_client.dart';
@@ -29,23 +30,8 @@ class AuthRepository extends BaseAuthRepository {
   }
 
   @override
-  Future<AppResponse<AuthUser?>> register(RegisterRequest request) async {
+  Future<AppResponse<UserEntity?>> loginWithToken() async {
     final response = await _dioClient.post(
-      Endpoints.register,
-      data: request.toJson(),
-    );
-
-    return AppResponse<AuthUser?>.fromJson(
-      response.data,
-      (dynamic json) => response.data['success'] && json != null
-          ? AuthUser.fromJson(json)
-          : null,
-    );
-  }
-
-  @override
-  Future<AppResponse<UserEntity?>> loginwithToken() async {
-       final response = await _dioClient.post(
       Endpoints.loginWithToken,
     );
 
@@ -58,7 +44,7 @@ class AuthRepository extends BaseAuthRepository {
   }
 
   @override
-   Future<AppResponse> logout() async {
+  Future<AppResponse> logout() async {
     final response = await _dioClient.get(
       Endpoints.logout,
     );
@@ -66,6 +52,21 @@ class AuthRepository extends BaseAuthRepository {
     return AppResponse.fromJson(
       response.data,
       (dynamic json) => null,
+    );
+  }
+
+  @override
+  Future<AppResponse<AuthUser?>> register(RegisterRequest request) async {
+    final response = await _dioClient.post(
+      Endpoints.register,
+      data: request.toJson(),
+    );
+
+    return AppResponse<AuthUser?>.fromJson(
+      response.data,
+      (dynamic json) => response.data['success'] && json != null
+          ? AuthUser.fromJson(json)
+          : null,
     );
   }
 }

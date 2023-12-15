@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'chat_message_model.dart';
 
@@ -42,8 +42,7 @@ mixin _$ChatMessageEntity {
 abstract class $ChatMessageEntityCopyWith<$Res> {
   factory $ChatMessageEntityCopyWith(
           ChatMessageEntity value, $Res Function(ChatMessageEntity) then) =
-      _$ChatMessageEntityCopyWithImpl<$Res, ChatMessageEntity>;
-  @useResult
+      _$ChatMessageEntityCopyWithImpl<$Res>;
   $Res call(
       {int id,
       @JsonKey(name: "chat_id") int chatId,
@@ -57,75 +56,71 @@ abstract class $ChatMessageEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChatMessageEntityCopyWithImpl<$Res, $Val extends ChatMessageEntity>
+class _$ChatMessageEntityCopyWithImpl<$Res>
     implements $ChatMessageEntityCopyWith<$Res> {
   _$ChatMessageEntityCopyWithImpl(this._value, this._then);
 
+  final ChatMessageEntity _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(ChatMessageEntity) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? chatId = null,
-    Object? userId = null,
-    Object? message = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? user = null,
+    Object? id = freezed,
+    Object? chatId = freezed,
+    Object? userId = freezed,
+    Object? message = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      chatId: null == chatId
+      chatId: chatId == freezed
           ? _value.chatId
           : chatId // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
+      userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
-      message: null == message
+      message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
+      createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: null == updatedAt
+      updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserEntity,
-    ) as $Val);
+    ));
   }
 
   @override
-  @pragma('vm:prefer-inline')
   $UserEntityCopyWith<$Res> get user {
     return $UserEntityCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
+      return _then(_value.copyWith(user: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ChatMessageEntityImplCopyWith<$Res>
+abstract class _$$_ChatMessageEntityCopyWith<$Res>
     implements $ChatMessageEntityCopyWith<$Res> {
-  factory _$$ChatMessageEntityImplCopyWith(_$ChatMessageEntityImpl value,
-          $Res Function(_$ChatMessageEntityImpl) then) =
-      __$$ChatMessageEntityImplCopyWithImpl<$Res>;
+  factory _$$_ChatMessageEntityCopyWith(_$_ChatMessageEntity value,
+          $Res Function(_$_ChatMessageEntity) then) =
+      __$$_ChatMessageEntityCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {int id,
       @JsonKey(name: "chat_id") int chatId,
@@ -140,50 +135,52 @@ abstract class _$$ChatMessageEntityImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ChatMessageEntityImplCopyWithImpl<$Res>
-    extends _$ChatMessageEntityCopyWithImpl<$Res, _$ChatMessageEntityImpl>
-    implements _$$ChatMessageEntityImplCopyWith<$Res> {
-  __$$ChatMessageEntityImplCopyWithImpl(_$ChatMessageEntityImpl _value,
-      $Res Function(_$ChatMessageEntityImpl) _then)
-      : super(_value, _then);
+class __$$_ChatMessageEntityCopyWithImpl<$Res>
+    extends _$ChatMessageEntityCopyWithImpl<$Res>
+    implements _$$_ChatMessageEntityCopyWith<$Res> {
+  __$$_ChatMessageEntityCopyWithImpl(
+      _$_ChatMessageEntity _value, $Res Function(_$_ChatMessageEntity) _then)
+      : super(_value, (v) => _then(v as _$_ChatMessageEntity));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_ChatMessageEntity get _value => super._value as _$_ChatMessageEntity;
+
   @override
   $Res call({
-    Object? id = null,
-    Object? chatId = null,
-    Object? userId = null,
-    Object? message = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? user = null,
+    Object? id = freezed,
+    Object? chatId = freezed,
+    Object? userId = freezed,
+    Object? message = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? user = freezed,
   }) {
-    return _then(_$ChatMessageEntityImpl(
-      id: null == id
+    return _then(_$_ChatMessageEntity(
+      id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      chatId: null == chatId
+      chatId: chatId == freezed
           ? _value.chatId
           : chatId // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
+      userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
-      message: null == message
+      message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
+      createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: null == updatedAt
+      updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserEntity,
@@ -193,18 +190,19 @@ class __$$ChatMessageEntityImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatMessageEntityImpl implements _ChatMessageEntity {
-  _$ChatMessageEntityImpl(
+class _$_ChatMessageEntity extends _ChatMessageEntity {
+  _$_ChatMessageEntity(
       {required this.id,
       @JsonKey(name: "chat_id") required this.chatId,
       @JsonKey(name: "user_id") required this.userId,
       required this.message,
       @JsonKey(name: "created_at") required this.createdAt,
       @JsonKey(name: "updated_at") required this.updatedAt,
-      required this.user});
+      required this.user})
+      : super._();
 
-  factory _$ChatMessageEntityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatMessageEntityImplFromJson(json);
+  factory _$_ChatMessageEntity.fromJson(Map<String, dynamic> json) =>
+      _$$_ChatMessageEntityFromJson(json);
 
   @override
   final int id;
@@ -234,39 +232,43 @@ class _$ChatMessageEntityImpl implements _ChatMessageEntity {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatMessageEntityImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.chatId, chatId) || other.chatId == chatId) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.user, user) || other.user == user));
+            other is _$_ChatMessageEntity &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.chatId, chatId) &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, chatId, userId, message, createdAt, updatedAt, user);
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(chatId),
+      const DeepCollectionEquality().hash(userId),
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(updatedAt),
+      const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatMessageEntityImplCopyWith<_$ChatMessageEntityImpl> get copyWith =>
-      __$$ChatMessageEntityImplCopyWithImpl<_$ChatMessageEntityImpl>(
+  _$$_ChatMessageEntityCopyWith<_$_ChatMessageEntity> get copyWith =>
+      __$$_ChatMessageEntityCopyWithImpl<_$_ChatMessageEntity>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ChatMessageEntityImplToJson(
+    return _$$_ChatMessageEntityToJson(
       this,
     );
   }
 }
 
-abstract class _ChatMessageEntity implements ChatMessageEntity {
+abstract class _ChatMessageEntity extends ChatMessageEntity {
   factory _ChatMessageEntity(
       {required final int id,
       @JsonKey(name: "chat_id") required final int chatId,
@@ -274,10 +276,11 @@ abstract class _ChatMessageEntity implements ChatMessageEntity {
       required final String message,
       @JsonKey(name: "created_at") required final String createdAt,
       @JsonKey(name: "updated_at") required final String updatedAt,
-      required final UserEntity user}) = _$ChatMessageEntityImpl;
+      required final UserEntity user}) = _$_ChatMessageEntity;
+  _ChatMessageEntity._() : super._();
 
   factory _ChatMessageEntity.fromJson(Map<String, dynamic> json) =
-      _$ChatMessageEntityImpl.fromJson;
+      _$_ChatMessageEntity.fromJson;
 
   @override
   int get id;
@@ -299,6 +302,6 @@ abstract class _ChatMessageEntity implements ChatMessageEntity {
   UserEntity get user;
   @override
   @JsonKey(ignore: true)
-  _$$ChatMessageEntityImplCopyWith<_$ChatMessageEntityImpl> get copyWith =>
+  _$$_ChatMessageEntityCopyWith<_$_ChatMessageEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
