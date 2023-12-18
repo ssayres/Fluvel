@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Chat App',
+          title: 'Via Chat',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
@@ -80,6 +80,7 @@ class MyApp extends StatelessWidget {
            routes: {
              GuestScreen.routeName: (_) => const GuestScreen(),
              ChatListScreen.routeName: (_) => const ChatListScreen(),
+             SplashScreen.routeName: (_) => const SplashScreen(),
           //   ChatListScreen.routeName: (_) => const ChatListScreen(),
           //   ChatScreen.routeName: (_) => const ChatScreen(),
            },
