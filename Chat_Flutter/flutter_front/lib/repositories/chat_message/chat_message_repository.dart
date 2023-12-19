@@ -21,9 +21,9 @@ class ChatMessageRepository extends BaseChatMessageRepository {
       Endpoints.createChatMessage,
       data: request.toJson(),
       options: Options(
-        headers: {
-          'X-Socket-ID': socketId,
-        },
+        // headers: {
+        //   'X-Socket-ID': socketId,
+        // },
       ),
     );
 

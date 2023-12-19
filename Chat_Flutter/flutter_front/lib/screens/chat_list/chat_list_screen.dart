@@ -5,6 +5,7 @@ import 'package:flutter_front/blocs/chat/chat_bloc.dart';
 import 'package:flutter_front/blocs/user/user_bloc.dart';
 import 'package:flutter_front/cubits/cubits.dart';
 import 'package:flutter_front/models/models.dart';
+import 'package:flutter_front/screens/chat/chat_screen.dart';
 import 'package:flutter_front/screens/guest/guest_screen.dart';
 import 'package:flutter_front/utils/utils.dart';
 import 'package:flutter_front/widgets/widgets.dart';
@@ -26,6 +27,11 @@ class ChatListScreen extends StatelessWidget {
         onInit: () async {
           chatBloc.add(const ChatStarted());
           userBloc.add(const UserStarted());
+
+          LaravelEcho.init(token: authBloc.state.token!);
+        },
+        onDisposed: () {
+          LaravelEcho.instance.disconnect();
         },
         child: Scaffold(
           appBar: AppBar(
@@ -91,7 +97,7 @@ class ChatListScreen extends StatelessWidget {
             builder: (context, state) {
               eLog(state);
               return FloatingActionButton(
-                onPressed: () => _showSearch(context, []),
+                onPressed: () => _showSearch(context, state),
                 child: const Icon(Icons.search),
               );
             },
@@ -134,7 +140,11 @@ class ChatListScreen extends StatelessWidget {
                 leading: const Icon(Icons.account_circle, size: 50.0),
                 title: Text(user.username),
                 subtitle: Text(user.email),
-                onTap: () {},
+                onTap: () {
+                  context.read<ChatBloc>().add(UserSelected(user));
+
+                  Navigator.of(context).pushNamed(ChatScreen.routeName);
+                },
               )),
     );
   }

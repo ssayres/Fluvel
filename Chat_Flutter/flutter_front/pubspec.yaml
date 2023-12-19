@@ -43,7 +43,14 @@ dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
-    
+  laravel_echo:
+    git:
+      url: https://github.com/kakajansh/echo.git
+      ref: master
+  pusher_client:
+    git:
+      url: https://github.com/DumbDev168/pusher_client.git
+      ref: master
 
 
   # The following adds the Cupertino Icons font to your application.

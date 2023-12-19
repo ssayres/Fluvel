@@ -79,10 +79,9 @@ class MyApp extends StatelessWidget {
            initialRoute: GuestScreen.routeName,
            routes: {
              GuestScreen.routeName: (_) => const GuestScreen(),
-             ChatListScreen.routeName: (_) => const ChatListScreen(),
              SplashScreen.routeName: (_) => const SplashScreen(),
-          //   ChatListScreen.routeName: (_) => const ChatListScreen(),
-          //   ChatScreen.routeName: (_) => const ChatScreen(),
+             ChatListScreen.routeName: (_) => const ChatListScreen(),
+             ChatScreen.routeName: (_) => const ChatScreen(),
            },
         ),
       ),

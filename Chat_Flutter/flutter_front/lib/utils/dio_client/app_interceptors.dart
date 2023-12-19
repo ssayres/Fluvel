@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_front/blocs/auth/auth_bloc.dart';
 
 import 'package:flutter_front/models/models.dart';
 
@@ -18,9 +19,14 @@ class AppInterceptors extends Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     /// Tries to add Authorization header only if Authorization header not extisted
     if (!options.headers.containsKey(HttpHeaders.authorizationHeader)) {
-      const fakeToken = 'FakeToken';
+      final state = AuthBloc().state;
 
-      options.headers[HttpHeaders.authorizationHeader] = 'Bearer ${fakeToken}';
+      if(state.token != null){
+
+       options.headers[HttpHeaders.authorizationHeader] = 'Bearer ${state.token}';
+
+      }
+     
     }
 
     return handler.next(options);
