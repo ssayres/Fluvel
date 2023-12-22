@@ -1,4 +1,3 @@
-import 'package:flutter_front/utils/formatting.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter_front/models/user_model.dart';
@@ -31,6 +30,4 @@ class ChatMessageEntity with _$ChatMessageEntity {
       createdAt: parseDateTime(createdAt),
     );
   }
-  
-
 }

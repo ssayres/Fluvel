@@ -1,11 +1,12 @@
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_front/models/requests/requests.dart';
+import 'package:flutter_front/repositories/chat/chat_repository.dart';
 import 'package:flutter_front/repositories/chat_message/chat_message_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_front/enums/enums.dart';
 import 'package:flutter_front/models/models.dart';
-import 'package:flutter_front/repositories/chat/chat_repository.dart';
+
 part 'chat_event.dart';
 part 'chat_state.dart';
 part 'chat_bloc.freezed.dart';
@@ -61,7 +62,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
 
       if (state.isSearchChat) {
         final chatResult = await _chatRepository.createChat(
-          CreateChatRequest(userId: state.otherUserId!) as CreateChatMessageRequest,
+          CreateChatRequest(userId: state.otherUserId!),
         );
 
         if (chatResult.success) {

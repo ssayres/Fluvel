@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_front/cubits/cubits.dart';
-import 'package:flutter_front/screens/chat_list/chat_list_screen.dart';
+import 'package:flutter_front/screens/screens.dart';
 import 'package:flutter_login/flutter_login.dart';
 
 class GuestScreen extends StatelessWidget {
@@ -22,7 +22,7 @@ class GuestScreen extends StatelessWidget {
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
-        pageColorDark: Color.fromARGB(255, 255, 200, 98),
+         pageColorDark: Color.fromARGB(255, 255, 200, 98),
         pageColorLight: Color.fromARGB(255, 254, 254, 255),
       ),
       logo: const AssetImage('assets/images/chat.png'),

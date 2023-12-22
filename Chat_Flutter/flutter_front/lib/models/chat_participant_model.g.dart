@@ -6,17 +6,17 @@ part of 'chat_participant_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatParticipantEntityImpl _$$ChatParticipantEntityImplFromJson(
+_$_ChatParticipantEntity _$$_ChatParticipantEntityFromJson(
         Map<String, dynamic> json) =>
-    _$ChatParticipantEntityImpl(
+    _$_ChatParticipantEntity(
       id: json['id'] as int,
       chatId: json['chat_id'] as int,
       userId: json['user_id'] as int,
       user: UserEntity.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ChatParticipantEntityImplToJson(
-        _$ChatParticipantEntityImpl instance) =>
+Map<String, dynamic> _$$_ChatParticipantEntityToJson(
+        _$_ChatParticipantEntity instance) =>
     <String, dynamic>{
       'id': instance.id,
       'chat_id': instance.chatId,

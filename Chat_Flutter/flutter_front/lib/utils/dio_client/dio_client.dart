@@ -30,7 +30,7 @@ class DioClient {
         },
       ),
     );
-
+    
     dio.interceptors.addAll([
         PrettyDioLogger(
         requestHeader: true,
@@ -43,7 +43,6 @@ class DioClient {
       ),
       AppInterceptors(),
     ]);
-
     return dio;
   }
 }

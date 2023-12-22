@@ -8,10 +8,10 @@ import 'package:flutter_front/utils/utils.dart';
 
 class ChatMessageRepository extends BaseChatMessageRepository {
   final Dio _dioClient;
+
   ChatMessageRepository({
     Dio? dioClient,
   }) : _dioClient = dioClient ?? DioClient().instance;
-
   @override
   Future<AppResponse<ChatMessageEntity?>> createChatMessage(
     CreateChatMessageRequest request,
@@ -21,9 +21,9 @@ class ChatMessageRepository extends BaseChatMessageRepository {
       Endpoints.createChatMessage,
       data: request.toJson(),
       options: Options(
-        // headers: {
-        //   'X-Socket-ID': socketId,
-        // },
+        headers: {
+          'X-Socket-ID': socketId,
+        },
       ),
     );
 

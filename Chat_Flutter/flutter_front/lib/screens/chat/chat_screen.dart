@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:convert';
 
 import 'package:dash_chat_2/dash_chat_2.dart';
@@ -7,7 +9,6 @@ import 'package:flutter_front/blocs/auth/auth_bloc.dart';
 import 'package:flutter_front/blocs/chat/chat_bloc.dart';
 import 'package:flutter_front/models/models.dart';
 import 'package:flutter_front/utils/chat.dart';
-import 'package:flutter_front/utils/laravel_echo/laravel_echo.dart';
 import 'package:flutter_front/utils/utils.dart';
 import 'package:flutter_front/widgets/widgets.dart';
 import 'package:pusher_client/pusher_client.dart';

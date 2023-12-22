@@ -36,7 +36,7 @@ class ChatListItem extends StatelessWidget {
               maxLines: 1,
             ),
           ),
-          // Text(utcToLocal(item.updatedAt)),
+          Text(utcToLocal(item.updatedAt)),
         ],
       ),
       onTap: () => onPressed(item),

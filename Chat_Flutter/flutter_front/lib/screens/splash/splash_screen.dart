@@ -4,7 +4,6 @@ import 'package:flutter_front/blocs/blocs.dart';
 import 'package:flutter_front/screens/screens.dart';
 import 'package:flutter_front/utils/utils.dart';
 import 'package:flutter_front/widgets/widgets.dart';
-// import 'package:flutter_front/widgets/widgets.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,7 +30,6 @@ class _SplashScreenState extends State<SplashScreen> {
       if (!mounted) return;
 
       final authState = context.read<AuthBloc>().state;
-      eLog(authState);
 
       final redirectScreen = authState.isAuthenticated
           ? ChatListScreen.routeName

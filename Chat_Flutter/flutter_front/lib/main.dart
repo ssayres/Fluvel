@@ -2,7 +2,7 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_front/blocs/auth/auth_bloc.dart';
+import 'package:flutter_front/blocs/blocs.dart';
 import 'package:flutter_front/blocs/chat/chat_bloc.dart';
 import 'package:flutter_front/blocs/user/user_bloc.dart';
 import 'package:flutter_front/cubits/cubits.dart';
@@ -33,8 +33,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-  
-    
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<AuthRepository>(
@@ -76,13 +74,13 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-           initialRoute: GuestScreen.routeName,
-           routes: {
-             GuestScreen.routeName: (_) => const GuestScreen(),
-             SplashScreen.routeName: (_) => const SplashScreen(),
-             ChatListScreen.routeName: (_) => const ChatListScreen(),
-             ChatScreen.routeName: (_) => const ChatScreen(),
-           },
+          initialRoute: SplashScreen.routeName,
+          routes: {
+            SplashScreen.routeName: (_) => const SplashScreen(),
+            GuestScreen.routeName: (_) => const GuestScreen(),
+            ChatListScreen.routeName: (_) => const ChatListScreen(),
+            ChatScreen.routeName: (_) => const ChatScreen(),
+          },
         ),
       ),
     );

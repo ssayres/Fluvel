@@ -6,8 +6,8 @@ part of 'chat_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatEntityImpl _$$ChatEntityImplFromJson(Map<String, dynamic> json) =>
-    _$ChatEntityImpl(
+_$_ChatEntity _$$_ChatEntityFromJson(Map<String, dynamic> json) =>
+    _$_ChatEntity(
       id: json['id'] as int,
       name: json['name'] as String?,
       isPrivate: json['is_private'] as int,
@@ -22,7 +22,7 @@ _$ChatEntityImpl _$$ChatEntityImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$ChatEntityImplToJson(_$ChatEntityImpl instance) =>
+Map<String, dynamic> _$$_ChatEntityToJson(_$_ChatEntity instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
